@@ -1,0 +1,143 @@
+.audio-playlist {
+	overflow: hidden;
+	padding: 0px;
+	background: #fff;
+	border: 0;
+	float: none;
+	margin: 0;
+	width: 80px;
+	height: 80px;
+}
+.audio-playlist span, .audio-playlist abbr, .audio-playlist a {
+	display: none;
+}
+.audio-playlist img {
+	display: none;
+}
+.audio-playlist .haudio {
+	float: left;
+	margin: 0;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.list-playlist .haudio {display: none;}
+.audio-playlist .haudio span {display:none;}
+.audio-playlist .fn {
+	float: left;
+	width: 110px;
+	display: block;
+	font: 11px arial;
+}
+.audio-playlist .album {
+	font-style: italic;
+}
+.mini-playlist .haudio {display: none}
+
+/*************************/
+
+/* PLAYER
+ --------------*/
+.jp-player {width: 0; height: 0}
+.jp-playlist-player {margin: 0; display: block; width: 100%; height: 100%;}
+.jp-interface {
+	position: relative;
+	display: block;
+	width: 80px;
+	height: 80px;
+}
+
+.now-playing {width: 75%; overflow: hidden; display: none;
+	position: absolute; top: 0; left: 0;}
+
+.now-playing span {text-transform: none; display: none;}
+
+.jp-interface .jp-controls {margin: 0; padding: 0;}
+
+.jp-controls {
+	float: none;
+	overflow: hidden;
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	display: block;
+	width: 80px;
+	height: 80px;}
+.jp-controls li {
+	float: none;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.jp-controls a {
+	display: block;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	width: 80px;
+	height: 80px;
+}
+.jp-controls .jp-play {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border: 5px solid #202020;
+	font-family: 'glyph';
+	color: #202020;
+	background: white;
+	font-size: 40px;
+	font-size: 2.5rem;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: 0.1s;
+	-moz-transition: 0.1s;
+	-o-transition: 0.1s;
+	transition: 0.1s;
+}
+.jp-controls .jp-play:before {
+	padding-left: 3px;
+	line-height: 71px;
+	content: "\23";
+}
+.jp-controls .jp-play:hover {
+	color: white;
+	background: #202020;
+}
+.jp-controls .jp-pause {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border: 0;
+	background: #c30000;
+	font-family: 'glyph';
+	color: #ffffff;
+	font-size: 40px;
+	font-size: 2.5rem;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: 0.1s;
+	-moz-transition: 0.1s;
+	-o-transition: 0.1s;
+	transition: 0.1s;
+}
+.jp-controls .jp-pause:before {
+	line-height: 80px;
+	content: "\24";
+}
+.jp-controls .jp-pause:hover {
+
+}
+.jp-controls .jp-previous {display: none;background-position: 0 -39px; width: 23px; height: 23px; margin-top: 5px}
+.jp-controls .jp-next {display:none;background-position: -62px -39px; width: 23px; height: 23px; margin-top: 5px}
+.jp-controls .jp-stop, .jp-volume {display: none}
+
+.jp-progress {display: none; width: 80%; height: 4px; position: absolute; left: 0; bottom: 0;
+	background: #fff; border: 1px solid #dedede; overflow: hidden; cursor: pointer}
+.jp-load-bar {display: none; height: 4px; background: #dedede; overflow: hidden}
+.jp-play-bar {display: none; height: 4px; background: #333; overflow: hidden}
+.jp-play-bar span {display: none; width: 100%; height: 4px; position: relative;
+	 background: #333; overflow: hidden}
+
+.jp-current-time, .jp-duration {display: none;}
+.jp-play-time-all {position: absolute; bottom: -3px; right: 5px; display: none; text-align: right;
+ 	font: bold 12px/12px arial;}

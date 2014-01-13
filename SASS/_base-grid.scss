@@ -1,0 +1,108 @@
+/* MAIN GRID SYSTEM */
+div,
+section,
+article {
+	position: relative;
+	display: block;
+}
+
+.center-container {
+	width: 100%;
+	@include rem(padding,0 2.5rem);
+
+	@include breakpoint(large) {
+		@include rem(padding,0 7rem);
+	}
+	@include breakpoint(landscape) {
+		@include rem(padding,0 2rem);
+	}
+	@include breakpoint(portrait) {
+		@include rem(padding,0 1.5rem);
+	}
+	@include breakpoint(mobile) {
+		@include rem(padding,0 1rem);
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+}
+
+.post-center {
+	width: 100%;
+	@include rem(padding,0 16rem);
+	text-align: left;
+
+	@include breakpoint(landscape) {
+		@include rem(padding,0 14rem);
+	}
+	@include breakpoint(portrait) {
+		@include rem(padding,0 9rem);
+	}
+	@include breakpoint(mobile) {
+		@include rem(padding,0 1rem);
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+}
+
+.columns-center {
+	width: 100%;
+	@include rem(padding,0 9rem);
+	text-align: left;
+
+	@include breakpoint(landscape) {
+		@include rem(padding,0 7rem);
+	}
+	@include breakpoint(portrait) {
+		@include rem(padding,0 4rem);
+	}
+	@include breakpoint(mobile) {
+		@include rem(padding,0 1rem);
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+}
+
+.padding-bottom {
+	padding-bottom: 100px !important;
+
+	@include breakpoint(large) {
+		padding-bottom:130px !important;
+	}
+	@include breakpoint(mobile) {
+		padding-bottom: 55px !important;
+	}
+}
+.btm-margin {
+	@include rem(margin-bottom,2rem);
+
+	@include breakpoint(mobile) {
+		@include rem(margin-bottom,1.5rem);
+	}
+}

@@ -1,0 +1,239 @@
+/* SIDEBAR DESIGN */
+$sidebar-width: 351px;
+
+#sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: $dark;
+	display: block;
+	height: 100%;
+	z-index: 999;
+	padding: 0 15px;
+	width: $sidebar-width;
+
+	ul {
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		width: 100%;
+		border-bottom: 1px solid rgba(white,0.1);
+
+		&#sidebar-page-nav,
+		&#menu-lower-menu {
+			border-bottom: 0;
+			margin-bottom: 0;
+
+			@include breakpoint(mobile) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	@include breakpoint(mobile) {
+		position: absolute;
+		left: 0;
+		right: auto;
+		width: 100%;
+		height: auto;
+	}
+}
+
+#menu-button {
+	cursor: pointer;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 32px;
+	@include rem(height,2rem);
+	@include rem(width,2rem);
+	@include rem(margin-left,-2rem);
+	background: $dark;
+	color: white;
+	font-family: 'glyph';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	@include rem(line-height,2rem);
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+	text-align: center;
+	-ms-touch-action: none !important;
+
+	@include breakpoint(large) {
+		top: 30px;
+	}
+	@include breakpoint(landscape) {
+		top: 35px;
+	}
+	@include breakpoint(portrait) {
+		top: 35px;
+	}
+	@include breakpoint(mobile) {
+		bottom: 0;
+		top: auto;
+		left: auto;
+		@include rem(right,1rem);
+		margin-left: 0;
+		@include rem(width,3rem);
+		@include rem(height,3rem);
+		@include rem(line-height,3rem);
+		@include rem(margin-bottom,-3rem);
+	}
+
+	&:before {
+		@include rem(font-size,1.5rem);
+		vertical-align: top;
+		content: "\26";
+
+		@include breakpoint(mobile) {
+			@include rem(font-size,2rem);
+		}
+	}
+
+	.body-mobile #sidebar:hover &,
+	.body-mobile &:hover {
+		&:before {
+			content: "\26";
+		}
+	}
+	#sidebar:hover & {
+		&:before {
+			content: "\25";
+
+			@include breakpoint(mobile) {
+				content: "\26";
+			}
+		}
+	}
+	#sidebar.sidebar-active & {
+		&:before {
+			@include rem(font-size,0.75rem);
+			content: "\22";
+
+			@include breakpoint(mobile) {
+				@include rem(font-size,1.15rem);
+			}
+		}
+	}
+}
+
+#main-nav,
+#social-nav,
+#sidebar-page-nav,
+#menu-header-menu,
+#menu-lower-menu {
+	padding: 15px 0;
+
+	li {
+		width: 100%;
+
+		a {
+			color: white;
+			font-family: Montserrat, sans-serif;
+			text-transform: uppercase;
+			-webkit-font-smoothing: antialiased;
+			text-decoration: none;
+			@include rem(font-size,1rem);
+			display: block;
+			font-weight: bold;
+			padding: 12px 0;
+			text-align: center;
+
+			&:hover {
+				background: rgba(white,0.05);
+			}
+		}
+	}
+}
+#social-nav {
+	padding-top: 0;
+
+	li {
+		float: left;
+		width: ($sidebar-width - 30px)/3;
+
+		@include breakpoint(mobile) {
+			@include calc(width, "100%/3");
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			-webkit-font-smoothing: antialiased;
+			padding: 23px 0;
+			@include rem(font-size,1.25rem);
+		}
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+}
+#sidebar-page-nav,
+#menu-lower-menu {
+	padding-top: 0;
+
+	li {
+		a {
+			@include rem(font-size, 0.75rem);
+		}
+	}
+}
+
+.search {
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid rgba(white,0.1);
+}
+.searchbar {
+	width: 100%;
+	-webkit-appearance: none;
+	appearance: none;
+	@include border-radius(0);
+	border: 0;
+	@include rem(padding,15px 10px 15px 3rem);
+	font-family: Montserrat, sans-serif;
+	color: $primary;
+	@include rem(font-size,1.25rem);
+	text-transform: uppercase;
+	@include transition(0.2s);
+	background-image: image-url('search.png');
+	background-repeat: no-repeat;
+	background-color: rgba(white,0.05);
+	background-size: auto 55%;
+	background-position: 10px center;
+
+	&:focus {
+		background-color: rgba(white,0.9);
+		outline: none;
+		border: 0;
+	}
+}
+
+#search-submit {
+	visibility: hidden;
+	@include opacity(0);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 1px;
+	height: 1px;
+	z-index: -1;
+	color: $dark;
+	border: 0;
+	background: $dark;
+
+	&:hover {
+		@include opacity(0);
+		visibility: hidden;
+	}
+}

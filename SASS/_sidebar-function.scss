@@ -1,0 +1,49 @@
+/* SIDEBAR FUNCTIONALITY */
+#main-container {
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	@include transition(margin 0.2s, opacity 0.2s);
+
+	&.sidebar-hover {
+		margin-left: -10px;
+		@include opacity(0.5);
+
+		@include breakpoint(mobile) {
+			margin-left: 0;
+			@include opacity(1);
+		}
+	}
+	&.sidebar-active {
+		margin-left: -(($sidebar-width) - 15);
+		@include opacity(0.4);
+
+		@include breakpoint(mobile) {
+			margin-left: 0;
+		}
+	}
+}
+
+#sidebar {
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+	margin-right: -(($sidebar-width) - 15);
+	@include transition(margin 0.2s);
+
+	&.sidebar-hover {
+		margin-right: -(($sidebar-width) - 25);
+	}
+	&.sidebar-active {
+		margin-right: 0;
+	}
+
+	@include breakpoint(mobile) {
+		margin-right: 0;
+		margin-top: -521px;
+
+		&.sidebar-active {
+			margin-top: 0;
+		}
+	}
+}

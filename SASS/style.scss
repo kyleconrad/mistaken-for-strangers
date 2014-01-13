@@ -1,0 +1,126 @@
+/* All coding, design, ideas, fantastical inventions, etc. etc. copyright 2012 Kyle Conrad */
+/* Contact: kyle@kyleconrad.com */
+
+@charset "utf-8";
+
+$experimental-support-for-khtml: false;
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/css3/box";
+@import "compass/rem";
+@import "compass/animation";
+
+/* MIX-INS */
+@mixin breakpoint($point) {
+	@if $point == large {
+		@media only screen and (min-width : 1401px) { @content; }
+	}
+	@else if $point == landscape {
+		@media only screen and (min-width : 802px) and (max-width : 1025px) { @content; }
+	}
+	@else if $point == portrait {
+		@media only screen and (min-width : 642px) and (max-width : 801px) { @content; }
+	}
+	@else if $point == mobile {
+		@media only screen and (max-width : 641px) { @content; }
+	}
+}
+
+@mixin calc($property, $expression) {
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+
+
+/* VARIABLES */
+$dark: #202020;
+$primary: #c30000;
+
+/* RESET */
+html {
+	min-height: 100%;
+	height: 100%;
+	max-width: 100%;
+	-webkit-text-size-adjust: none;
+
+	@include breakpoint(large) {
+		font-size: 120%;
+	}
+	@include breakpoint(landscape) {
+		font-size: 90%;
+	}
+	@include breakpoint(portrait) {
+		font-size: 88%;
+	}
+	@include breakpoint(mobile) {
+		font-size: 80%;
+	}
+}
+body {
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+	overflow-x: hidden;
+}
+* {
+   	-webkit-box-sizing: border-box;
+   	-moz-box-sizing:    border-box;
+   	box-sizing:         border-box;
+}
+
+
+/* CLEAR & FLOATS */
+.clear { clear: both !important; }
+.left { float: left !important; }
+.right { float: right !important; }
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}
+
+.nomobile {
+	@include breakpoint(mobile) { display: none; }
+}
+
+
+/* IMPORTED STYLES */
+@import '_base-grid.scss';
+@import '_fonts.scss';
+@import '_text.scss';
+@import '_images.scss';
+@import '_main-container.scss';
+
+@import '_posts.scss';
+@import '_category.scss';
+@import '_pages.scss';
+@import '_single-post.scss';
+
+@import '_sidebar.scss';
+@import '_sidebar-function.scss';
+@import '_loading.scss';

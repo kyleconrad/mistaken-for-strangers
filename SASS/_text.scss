@@ -1,0 +1,228 @@
+/* TEXT & HEADER STYLES */
+h1 {
+
+}
+h2 {
+	text-transform: uppercase;
+	font-family: 'TheanoDidotRegular', serif;
+	letter-spacing: -4px;
+	line-height: 0.8;
+
+	& .amp {
+		font-size: 0.7em;
+		vertical-align: top;
+		margin-top: 0.175em;
+		display: inline-block;
+	}
+	& .dash {
+		vertical-align: top;
+		display: inline-block;
+		margin-top: -0.125em;
+	}
+	& .slash {
+		font-size: 0.75em;
+		vertical-align: top;
+		margin-right: 5px;
+		display: inline-block;
+	}
+}
+h3 {
+	text-transform: uppercase;
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+}
+
+p {
+	font-family: Lora;
+	font-weight: normal;
+	@include rem(font-size,1.1rem);
+	line-height: 1.4;
+	@include rem(margin-bottom,1.5rem);
+	display: block;
+	color: $dark;
+
+	a {
+		text-transform: uppercase;
+		font-family: Montserrat, sans-serif;
+		font-weight: bold;
+		font-size: 0.875em;
+		text-decoration: none;
+		color: $dark;
+		@include transition(0.2s);
+
+		&:hover {
+			color: $primary;
+		}
+
+		@include breakpoint(portrait) {
+			font-size: 0.75em;
+		}
+	}
+
+	&.large-type {
+		@include rem(font-size,1.5rem);
+		line-height: 1.35;
+	}
+
+	& .all-caps {
+		text-transform: uppercase;
+		font-family: Montserrat, sans-serif;
+		font-weight: bold;
+		font-size: 0.875em;
+		color: $dark;
+	}
+	& .spoiler {
+		background: $dark;
+
+		&::-moz-selection {
+			background: white;
+		}
+		&::selection {
+			background: white;
+		}
+	}
+
+	&.alignleft,
+	&.alignright {
+		clear: both;
+	}
+}
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
+}
+small {
+	font-size: 0.875em;
+}
+
+.alignleft {
+	width: 50%;
+	@include rem(padding-right,1.5rem);
+	float: left;
+
+	@include breakpoint(portrait) {
+		@include rem(padding-right,1.5rem);
+	}
+}
+.aligncenter {
+	width: 100%;
+	float: none;
+	clear: both;
+}
+.alignright {
+	width: 50%;
+	@include rem(padding-left,1.5rem);
+	float: right;
+
+	@include breakpoint(portrait) {
+		@include rem(padding-left,1.5rem);
+	}
+}
+.alignleft,
+.alignright {
+	@include breakpoint(mobile) {
+		width: 100%;
+		clear: both;
+		float: none;
+		padding: 0;
+	}
+}
+
+
+hr {
+	width: 70%;
+	height: 1px;
+	display: block;
+	border: 0;
+	background: rgba($dark,0.15);
+	@include rem(margin,1.75rem auto 2.25rem auto);
+
+	&.striped {
+		height: 15px;
+		background: image-url('stripes_dark.png');
+		@include opacity(0.3);
+	}
+}
+
+blockquote {
+	display: block;
+	width: 100%;
+	@include rem(margin-bottom,1.5rem);
+	text-transform: uppercase;
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+	background: $primary;
+	-webkit-font-smoothing: antialiased;
+	@include rem(font-size,2.25rem);
+	line-height: 0.95;
+
+	&:before,
+	&:after{
+		font-size: 2em;
+		display: inline;
+		vertical-align: bottom;
+		line-height: 0.175;
+	}
+	&:before {
+		margin-right: -5px;
+		content: "“";
+	}
+	&:after {
+		margin-left: -5px;
+		content: "”";
+	}
+
+	&.alignleft,
+	&.alignright {
+		width: 45%;
+		padding: 20px;
+
+		@include breakpoint(mobile) {
+			width: 100%;
+			clear: both;
+			float: none;
+		}
+	}
+	&.aligncenter {
+		@include rem(margin-bottom,2.5rem);
+	}
+}
+
+.dark {
+	color: $dark;
+}
+.primary {
+	color: $primary;
+}
+
+
+.single-post {
+	ol {
+		list-style-type: decimal;
+		@include rem(margin-bottom,1.5rem);
+	}
+
+	ul {
+		list-style-type: disc;
+		@include rem(margin-bottom,1.5rem);
+	}
+
+	li {
+		font-family: Lora;
+		font-weight: normal;
+		@include rem(font-size,1.1rem);
+		line-height: 1.4;
+		color: $dark;
+		@include rem(margin-bottom, 0.75rem);
+		margin-left: 1.25em;
+		padding-left: 15px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

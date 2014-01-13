@@ -1,0 +1,52 @@
+/* SINGLE PAGE STYLES */
+.single-page {
+	h3 {
+		@include rem(font-size,1.1rem);
+		@include rem(margin-bottom,1.1rem);
+	}
+
+	&:after {
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+
+	& .alignleft,
+	& .alignright {
+		clear: none;
+	}
+}
+
+.single-page-header {
+	background: $primary;
+	@include rem(margin-bottom,1.25rem);
+
+	h2 {
+		display: block;
+		color: white;
+		-webkit-font-smoothing: antialiased;
+		@include rem(font-size,2.75rem);
+		letter-spacing: -3px;
+		line-height: 0.85;
+		padding-top: 15px;
+		padding-bottom: 14px;
+
+		@include breakpoint(landscape) {
+			@include rem(font-size,3rem);
+			letter-spacing: -2px;
+		}
+		@include breakpoint(portrait) {
+			@include rem(font-size,2rem);
+			letter-spacing: -2px;
+		}
+	}
+
+	&.btm-margin {
+		@include rem(margin-bottom,2.5rem);
+	}
+}
