@@ -1,4 +1,6 @@
 <?php
+define('COOKIE_DOMAIN', 'www.mistakenforstrangers.com'); // Added by W3 Total Cache
+
 /**
  * The base configurations of the WordPress.
  *
@@ -36,6 +38,9 @@ define('DB_COLLATE', '');
 
 define('WP_SITEURL', 'http://www.mistakenforstrangers.com');
 define('WP_HOME','http://www.mistakenforstrangers.com');
+
+/** Fix cron job for missing scheduled posts */
+define('DISABLE_WP_CRON', true);
 
 /**#@+
  * Authentication Unique Keys and Salts.
